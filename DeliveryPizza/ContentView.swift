@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var is_Auth = true
+    
     @State private var email = ""
     @State private var password = ""
+    @State private var confirmPassword = ""
     
     var body: some View {
         
         VStack(spacing: 20) {
-            Text("Authorization")
+            Text(is_Auth ? "Authorization" : "Registration")
                 .padding()
                 .padding(.horizontal, 30)
                 .font(.title2.bold())
@@ -37,6 +40,15 @@ struct ContentView: View {
                     .padding(8)
                     .padding(.horizontal, 12)
                 
+                if !is_Auth {
+                    SecureField("Repeat password", text: $confirmPassword)
+                        .padding()
+                        .background(Color("whiteAlpha"))
+                        .cornerRadius(15)
+                        .padding(8)
+                        .padding(.horizontal, 12)
+                }
+                
                 Button {
                     print ("Aut")
                 } label: {
@@ -52,9 +64,9 @@ struct ContentView: View {
                 }
                 
                 Button {
-                    print ("Aut")
+                    is_Auth.toggle()
                 } label: {
-                    Text("Log In")
+                    Text("Registration")
                         .padding()
                         .frame(maxWidth: .infinity)
                         .background(LinearGradient(colors: [Color("yellow"), Color("orange")], startPoint: .leading, endPoint: .trailing))
@@ -69,6 +81,7 @@ struct ContentView: View {
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Image("background")).ignoresSafeArea()
+            .animation(Animation.easeOut(duration: 0.5), value: is_Auth)
     }
 }
 
