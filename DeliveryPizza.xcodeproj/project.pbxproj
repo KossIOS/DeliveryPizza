@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		CA1CD0FC29A699E10078B827 /* DeliveryPizzaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1CD0FB29A699E10078B827 /* DeliveryPizzaApp.swift */; };
-		CA1CD0FE29A699E10078B827 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1CD0FD29A699E10078B827 /* ContentView.swift */; };
+		CA1CD0FE29A699E10078B827 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1CD0FD29A699E10078B827 /* AuthView.swift */; };
 		CA1CD10029A699E20078B827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1CD0FF29A699E20078B827 /* Assets.xcassets */; };
 		CA1CD10329A699E20078B827 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1CD10229A699E20078B827 /* Preview Assets.xcassets */; };
+		CAFBC82F29CF94CB0089A4C1 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBC82E29CF94CB0089A4C1 /* MainTabBar.swift */; };
+		CAFBC83129CF9FE30089A4C1 /* Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBC83029CF9FE30089A4C1 /* Catalog.swift */; };
+		CAFBC83329CFA0390089A4C1 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBC83229CFA0390089A4C1 /* Basket.swift */; };
+		CAFBC83529CFA0650089A4C1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBC83429CFA0650089A4C1 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CA1CD0F829A699E10078B827 /* DeliveryPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1CD0FB29A699E10078B827 /* DeliveryPizzaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPizzaApp.swift; sourceTree = "<group>"; };
-		CA1CD0FD29A699E10078B827 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CA1CD0FD29A699E10078B827 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		CA1CD0FF29A699E20078B827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA1CD10229A699E20078B827 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CAFBC82E29CF94CB0089A4C1 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		CAFBC83029CF9FE30089A4C1 /* Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catalog.swift; sourceTree = "<group>"; };
+		CAFBC83229CFA0390089A4C1 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		CAFBC83429CFA0650089A4C1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +60,11 @@
 			isa = PBXGroup;
 			children = (
 				CA1CD0FB29A699E10078B827 /* DeliveryPizzaApp.swift */,
-				CA1CD0FD29A699E10078B827 /* ContentView.swift */,
+				CA1CD0FD29A699E10078B827 /* AuthView.swift */,
+				CAFBC82E29CF94CB0089A4C1 /* MainTabBar.swift */,
+				CAFBC83429CFA0650089A4C1 /* ProfileView.swift */,
+				CAFBC83229CFA0390089A4C1 /* Basket.swift */,
+				CAFBC83029CF9FE30089A4C1 /* Catalog.swift */,
 				CA1CD0FF29A699E20078B827 /* Assets.xcassets */,
 				CA1CD10129A699E20078B827 /* Preview Content */,
 			);
@@ -137,8 +149,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA1CD0FE29A699E10078B827 /* ContentView.swift in Sources */,
+				CAFBC82F29CF94CB0089A4C1 /* MainTabBar.swift in Sources */,
+				CA1CD0FE29A699E10078B827 /* AuthView.swift in Sources */,
 				CA1CD0FC29A699E10078B827 /* DeliveryPizzaApp.swift in Sources */,
+				CAFBC83129CF9FE30089A4C1 /* Catalog.swift in Sources */,
+				CAFBC83529CFA0650089A4C1 /* ProfileView.swift in Sources */,
+				CAFBC83329CFA0390089A4C1 /* Basket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
