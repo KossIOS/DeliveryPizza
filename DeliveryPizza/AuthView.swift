@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct AuthView: View {
     @State private var is_Auth = true
     
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @State private var isTabViewShow = false
     
     var body: some View {
         
@@ -33,7 +34,7 @@ struct ContentView: View {
                     .padding(8)
                     .padding(.horizontal, 12)
                 
-                SecureField("Password", text: $email)
+                SecureField("Password", text: $password)
                     .padding()
                     .background(Color("whiteAlpha"))
                     .cornerRadius(15)
@@ -50,7 +51,17 @@ struct ContentView: View {
                 }
                 
                 Button {
-                    print ("Aut")
+                    if is_Auth {
+                        print ("Autorization")
+                        isTabViewShow.toggle()
+                    } else {
+                        print ("Registration")
+                        self.email = ""
+                        self.password = ""
+                        self.confirmPassword = ""
+                        self.is_Auth.toggle()
+                    }
+                    
                 } label: {
                     Text("Sign In")
                         .padding()
@@ -82,11 +93,15 @@ struct ContentView: View {
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Image("background")).ignoresSafeArea()
             .animation(Animation.easeOut(duration: 0.5), value: is_Auth)
+            .fullScreenCover(isPresented: $isTabViewShow) {
+                MainTabBar()
+            }
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        AuthView()
     }
 }
