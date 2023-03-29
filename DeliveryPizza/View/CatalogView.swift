@@ -18,7 +18,8 @@ struct CatalogView: View {
                     LazyHGrid(rows: layout, spacing: 12) {
                         ForEach(CatalogViewModel.shared.products, id: \.id) { item in
                             NavigationLink {
-                                ProductDetailVIew(product: item)
+                                let viewModel = ProductDetailViewModel(product: item)
+                                ProductDetailVIew(viewModel: viewModel)
                             } label: {
                                 ProductViewCell(product: item)
                                     .foregroundColor(.black)

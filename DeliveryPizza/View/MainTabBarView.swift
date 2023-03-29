@@ -12,17 +12,17 @@ struct MainTabBarView: View {
         
         TabView {
             NavigationView {
-            
+                
                 CatalogView()
             }
-                .tabItem {
-                    VStack {
-                        Image(systemName: "book.circle")
-                        Text("Catalog")
-                    }
+            .tabItem {
+                VStack {
+                    Image(systemName: "book.circle")
+                    Text("Catalog")
                 }
+            }
             
-            BasketView()
+            BasketView(viewModel: CartViewModel())
                 .tabItem {
                     VStack {
                         Image(systemName: "cart.fill")

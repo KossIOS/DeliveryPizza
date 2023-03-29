@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct BasketView: View {
+    var viewModel: CartViewModel
     var body: some View {
         Text("Basket")
     }
@@ -15,6 +16,6 @@ struct BasketView: View {
 
 struct Basket_Previews: PreviewProvider {
     static var previews: some View {
-        BasketView()
+        BasketView(viewModel: CartViewModel())
     }
 }
