@@ -11,6 +11,9 @@
 		CA1CD0FE29A699E10078B827 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA1CD0FD29A699E10078B827 /* AuthView.swift */; };
 		CA1CD10029A699E20078B827 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1CD0FF29A699E20078B827 /* Assets.xcassets */; };
 		CA1CD10329A699E20078B827 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA1CD10229A699E20078B827 /* Preview Assets.xcassets */; };
+		CA2B02E229D2BE920088C572 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2B02E129D2BE920088C572 /* ProductDetailViewModel.swift */; };
+		CA5EAEC729D4FD6000F148D0 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5EAEC629D4FD6000F148D0 /* CartViewModel.swift */; };
+		CA5EAEC929D4FDDB00F148D0 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5EAEC829D4FDDB00F148D0 /* Position.swift */; };
 		CAFBC82F29CF94CB0089A4C1 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBC82E29CF94CB0089A4C1 /* MainTabBarView.swift */; };
 		CAFBC83129CF9FE30089A4C1 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBC83029CF9FE30089A4C1 /* CatalogView.swift */; };
 		CAFBC83329CFA0390089A4C1 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBC83229CFA0390089A4C1 /* BasketView.swift */; };
@@ -27,6 +30,9 @@
 		CA1CD0FD29A699E10078B827 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		CA1CD0FF29A699E20078B827 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA1CD10229A699E20078B827 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CA2B02E129D2BE920088C572 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		CA5EAEC629D4FD6000F148D0 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		CA5EAEC829D4FDDB00F148D0 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		CAFBC82E29CF94CB0089A4C1 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		CAFBC83029CF9FE30089A4C1 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
 		CAFBC83229CFA0390089A4C1 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFBC83729D090E00089A4C1 /* Product.swift */,
+				CA5EAEC829D4FDDB00F148D0 /* Position.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				CAFBC83D29D09C770089A4C1 /* CatalogViewModel.swift */,
+				CA2B02E129D2BE920088C572 /* ProductDetailViewModel.swift */,
+				CA5EAEC629D4FD6000F148D0 /* CartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -193,11 +202,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5EAEC729D4FD6000F148D0 /* CartViewModel.swift in Sources */,
 				CAFBC82F29CF94CB0089A4C1 /* MainTabBarView.swift in Sources */,
 				CA1CD0FE29A699E10078B827 /* AuthView.swift in Sources */,
 				CA1CD0FC29A699E10078B827 /* DeliveryPizzaApp.swift in Sources */,
 				CAFBC83129CF9FE30089A4C1 /* CatalogView.swift in Sources */,
 				CAFBC83A29D0928F0089A4C1 /* ProductViewCell.swift in Sources */,
+				CA2B02E229D2BE920088C572 /* ProductDetailViewModel.swift in Sources */,
+				CA5EAEC929D4FDDB00F148D0 /* Position.swift in Sources */,
 				CAFBC83529CFA0650089A4C1 /* ProfileView.swift in Sources */,
 				CAFBC83329CFA0390089A4C1 /* BasketView.swift in Sources */,
 				CAFBC83829D090E00089A4C1 /* Product.swift in Sources */,
