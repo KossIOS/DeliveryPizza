@@ -22,7 +22,7 @@ struct MainTabBarView: View {
                 }
             }
             
-            BasketView(viewModel: CartViewModel())
+            BasketView(viewModel: CartViewModel.shared)
                 .tabItem {
                     VStack {
                         Image(systemName: "cart.fill")

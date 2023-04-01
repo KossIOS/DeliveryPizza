@@ -13,11 +13,12 @@ struct ProductDetailVIew: View {
     @State var size = "Little"
     @State var count = 1
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
         VStack {
             VStack(alignment: .leading) {
-                
                 
                 Image("Margherita")
                     .resizable()
@@ -48,12 +49,15 @@ struct ProductDetailVIew: View {
                     }
                 }.pickerStyle(.segmented)
                     .padding()
-                
             }
-            
-            
-            Button{
-                print("add to basket")
+
+            Button {
+                
+                var position = Position(id: UUID().uuidString, product: viewModel.product, count: self.count)
+                position.product.price = viewModel.getPrixe(size: size)
+                CartViewModel.shared.addPosition(position)
+                presentationMode.wrappedValue.dismiss()
+                
             } label: {
                 Text("To basket")
                     .padding()
