@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>527511169520-v42frf9c23dpjmsmeo3aen1khogjoecj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.527511169520-v42frf9c23dpjmsmeo3aen1khogjoecj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBpP9vRJZ9HWwhiuLm7tmkVUPiyV0kVw-A</string>
+	<key>GCM_SENDER_ID</key>
+	<string>527511169520</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>pl.koss.koroban</string>
+	<key>PROJECT_ID</key>
+	<string>pizza-shop-56af7</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pizza-shop-56af7.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:527511169520:ios:78f20f1a34ea04a5dfd535</string>
+</dict>
+</plist>

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 let screen = UIScreen.main.bounds
 
@@ -16,4 +17,13 @@ struct DeliveryPizzaApp: App {
             AuthView()
         }
     }
+    
+    class AppDelegate: NSObject, UIApplicationDelegate {
+        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+            FirebaseApp.configure()
+            return true
+        }
+        
+    }
+    
 }
