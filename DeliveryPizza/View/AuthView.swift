@@ -14,6 +14,8 @@ struct AuthView: View {
     @State private var password = ""
     @State private var confirmPassword = ""
     @State private var isTabViewShow = false
+    @State private var isShowAlert = false
+    @State private var alertMessage = ""
     
     var body: some View {
         
@@ -56,10 +58,33 @@ struct AuthView: View {
                         isTabViewShow.toggle()
                     } else {
                         print ("Registration")
-                        self.email = ""
-                        self.password = ""
-                        self.confirmPassword = ""
-                        self.is_Auth.toggle()
+                        guard password == confirmPassword else {
+                            self.alertMessage = "Passwords incorrect"
+                            self.isShowAlert.toggle()
+                            return
+                        }
+                        
+                        
+                            
+                        AuthServise.shared.singUp(email: self.email, password: self.password) { result in
+                            switch result {
+                                
+                            case .success(let user):
+                                alertMessage = "You are registration \(user.email!)"
+                                self.isShowAlert.toggle()
+                                self.email = ""
+                                self.password = ""
+                                self.confirmPassword = ""
+                                self.is_Auth.toggle()
+                            case .failure(let error):
+                                alertMessage = "Registration failure\(error.localizedDescription)"
+                                self.isShowAlert.toggle()
+                            }
+                        }
+                        
+                        
+                        
+                        
                     }
                     
                 } label: {
@@ -88,7 +113,11 @@ struct AuthView: View {
                         .foregroundColor(.black)
                 }
             }
-            
+            .alert(alertMessage, isPresented: $isShowAlert) {
+                Button { } label: {
+                    Text("Ok")
+                }
+            }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Image("background")).ignoresSafeArea()
