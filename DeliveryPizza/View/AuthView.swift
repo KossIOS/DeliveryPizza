@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AuthView: View {
     @State private var is_Auth = true
-    
     @State private var email = ""
     @State private var password = ""
     @State private var confirmPassword = ""
@@ -55,6 +54,16 @@ struct AuthView: View {
                 Button {
                     if is_Auth {
                         print ("Autorization")
+                        AuthServise.shared.singIn(email: email, password: password) { result in
+                            switch result {
+                                
+                            case .success(_):
+                                isTabViewShow.toggle()
+                            case .failure(let error):
+                                alertMessage = "Error autorization : \(error.localizedDescription)"
+                                isShowAlert.toggle()
+                            }
+                        }
                         isTabViewShow.toggle()
                     } else {
                         print ("Registration")
@@ -65,7 +74,6 @@ struct AuthView: View {
                         }
                         
                         
-                            
                         AuthServise.shared.singUp(email: self.email, password: self.password) { result in
                             switch result {
                                 
@@ -123,7 +131,8 @@ struct AuthView: View {
             .background(Image("background")).ignoresSafeArea()
             .animation(Animation.easeOut(duration: 0.5), value: is_Auth)
             .fullScreenCover(isPresented: $isTabViewShow) {
-                MainTabBarView()
+                let mainTapBarViewModel = MainTapBarViewModel(user: AuthServise.shared.currentUser!)
+                MainTabBar(viewModel: mainTapBarViewModel)
             }
         
     }
