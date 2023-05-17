@@ -10,14 +10,18 @@ import Firebase
 import FirebaseAuth
 
 let screen = UIScreen.main.bounds
-
 @main
 struct DeliveryPizzaApp: App {
     
-    @UIApplicationDelegateAdaptor private var appDelegate:  AppDelegate
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     var body: some Scene {
         WindowGroup {
-            AuthView()
+            if let user = AuthServise.shared.currentUser {
+                let viewModel = MainTabBarViewModel(user: user)
+                MainTabBar(viewModel: viewModel)
+            } else {
+                AuthView()
+            }
         }
     }
     

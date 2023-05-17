@@ -54,9 +54,8 @@ struct AuthView: View {
                 Button {
                     if is_Auth {
                         print ("Autorization")
-                        AuthServise.shared.singIn(email: email, password: password) { result in
+                        AuthServise.shared.singIn(email: self.email, password: self.password) { result in
                             switch result {
-                                
                             case .success(_):
                                 isTabViewShow.toggle()
                             case .failure(let error):
@@ -64,7 +63,7 @@ struct AuthView: View {
                                 isShowAlert.toggle()
                             }
                         }
-                        isTabViewShow.toggle()
+                        
                     } else {
                         print ("Registration")
                         guard password == confirmPassword else {
@@ -74,9 +73,9 @@ struct AuthView: View {
                         }
                         
                         
-                        AuthServise.shared.singUp(email: self.email, password: self.password) { result in
+                        AuthServise.shared.singUp(email: email, password: password) { result in
+                            
                             switch result {
-                                
                             case .success(let user):
                                 alertMessage = "You are registration \(user.email!)"
                                 self.isShowAlert.toggle()
@@ -89,9 +88,6 @@ struct AuthView: View {
                                 self.isShowAlert.toggle()
                             }
                         }
-                        
-                        
-                        
                         
                     }
                     
@@ -120,19 +116,24 @@ struct AuthView: View {
                         .font(.title3.bold())
                         .foregroundColor(.black)
                 }
-            }
-            .alert(alertMessage, isPresented: $isShowAlert) {
-                Button { } label: {
-                    Text("Ok")
+            }.padding()
+                .padding(.top, 16)
+                .background(Color("whiteAlpha"))
+                .cornerRadius(24)
+                .padding(30)
+                .alert(alertMessage, isPresented: $isShowAlert) {
+                    Button { } label: {
+                        Text("Ok")
+                    }
                 }
-            }
             
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Image("background")).ignoresSafeArea()
             .animation(Animation.easeOut(duration: 0.5), value: is_Auth)
             .fullScreenCover(isPresented: $isTabViewShow) {
-                let mainTapBarViewModel = MainTapBarViewModel(user: AuthServise.shared.currentUser!)
-                MainTabBar(viewModel: mainTapBarViewModel)
+                
+                let mainTabBarViewModel = MainTabBarViewModel(user: AuthServise.shared.currentUser!)
+                MainTabBar(viewModel: mainTabBarViewModel)
             }
         
     }

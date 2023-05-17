@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainTabBar: View {
     
-    var viewModel: MainTapBarViewModel
+    var viewModel: MainTabBarViewModel
     var body: some View {
         
         TabView {
@@ -32,7 +32,7 @@ struct MainTabBar: View {
                     }
                 }
             
-            ProfileView()
+            ProfileView(vieModel: ProfileViewModel(profile: KKUser(id: "", name: "", phone: 0000000000, address: "")))
                 .tabItem{
                     VStack {
                         Image(systemName: "person.circle")

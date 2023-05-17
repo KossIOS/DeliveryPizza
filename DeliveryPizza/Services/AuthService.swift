@@ -18,18 +18,18 @@ class AuthServise {
         return auth.currentUser
     }
     
-    func  singUp(email : String, password: String, completion:  @escaping (Result<User, Error>) -> ()) {
+    func  singUp(email: String, password: String, completion:  @escaping (Result<User, Error>) -> ()) {
         auth.createUser(withEmail: email, password: password) { result, error in
             if let result = result {
-                let kkUser = KKUser(id:result.user.uid,
+                let kkUser = KKUser(id: result.user.uid,
                                     name: "",
                                     phone: 0,
-                                    adress: "")
-                DatabaseService.shared.createUser(user: kkUser) { resultDB in
+                                    address: "")
+                DatabaseService.shared.setProfile(user: kkUser) { resultDB in
                     switch resultDB {
-                    case.success(_):
+                    case .success(_):
                         completion(.success(result.user))
-                    case.failure(let error):
+                    case .failure(let error):
                         completion(.failure(error))
                         
                     }
@@ -41,7 +41,7 @@ class AuthServise {
         }
     }
     
-    func singIn(email : String, password: String, completion:  @escaping (Result<User, Error>) -> ()) {
+    func singIn(email: String, password: String, completion:  @escaping (Result<User, Error>) -> ()) {
         auth.signIn(withEmail: email, password: password) { result, error in
             if let result = result {
                 completion(.success(result.user))
