@@ -13,6 +13,7 @@ struct ProfileView: View {
     @State var isQuitAlertPresented = false
     @State var isAuthViewPresented = false
     
+    @StateObject var vieModel: ProfileViewModel
     
     var body: some View {
         
@@ -42,22 +43,24 @@ struct ProfileView: View {
                     }
                 
                 VStack(alignment: .leading) {
-                    Text("Konstantyn Koroban")
-                        .bold()
-                    Text("+48 791533611")
-                    
-                }.padding(.trailing)
-            }
+                    TextField("Name", text: $vieModel.profile.name)
+                        .font(.body.bold())
+                    HStack {
+                        Text("+48")
+                        TextField("Phone", value: $vieModel.profile.phone, format: IntegerFormatStyle.number)
+                    }
+                }
+            }.padding()
             
             VStack(alignment: .leading){
                 Text("Delivery adres :")
                     .bold()
-                Text("Poland, Cracow, ul.Siemaszki 24")
-            }.padding(.trailing, 102)
+                TextField("Your address", text: $vieModel.profile.address)
+            }.padding(.horizontal)
             
             List {
                 Text("Your order here!")
-                    
+                
             }.listStyle(.plain)
             
             
@@ -78,16 +81,25 @@ struct ProfileView: View {
                     } label: {
                         Text("Yes")
                     }
+                    
                 }
+            
                 .fullScreenCover(isPresented: $isAuthViewPresented, onDismiss: nil) {
                     AuthView()
                 }
+        }
+        .onSubmit {
+            vieModel.setProfile()
+        }
+        
+        .onAppear{
+            self.vieModel.getProfile()
         }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(vieModel: ProfileViewModel(profile: KKUser(id: "", name: "Koss", phone: 123456789, address: "Siemaszki")))
     }
 }
