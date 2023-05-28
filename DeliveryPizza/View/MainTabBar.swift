@@ -32,7 +32,7 @@ struct MainTabBar: View {
                     }
                 }
             
-            ProfileView(vieModel: ProfileViewModel(profile: KKUser(id: "", name: "", phone: 0000000000, address: "")))
+            ProfileView(viewModel: ProfileViewModel(profile: KKUser(id: "", name: "", phone: 0000000000, address: "")))
                 .tabItem{
                     VStack {
                         Image(systemName: "person.circle")

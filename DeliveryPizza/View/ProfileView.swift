@@ -13,7 +13,7 @@ struct ProfileView: View {
     @State var isQuitAlertPresented = false
     @State var isAuthViewPresented = false
     
-    @StateObject var vieModel: ProfileViewModel
+    @StateObject var viewModel: ProfileViewModel
     
     var body: some View {
         
@@ -42,46 +42,50 @@ struct ProfileView: View {
                         }
                     }
                 
-                VStack(alignment: .leading) {
-                    TextField("Name", text: $vieModel.profile.name)
+                VStack(alignment: .leading, spacing: 12) {
+                    TextField("Name", text: $viewModel.profile.name)
                         .font(.body.bold())
                     HStack {
                         Text("+48")
-                        TextField("Phone", value: $vieModel.profile.phone, format: IntegerFormatStyle.number)
+                        TextField("Phone", value: $viewModel.profile.phone, format: IntegerFormatStyle.number)
                     }
                 }
             }.padding()
             
-            VStack(alignment: .leading){
+            VStack(alignment: .leading, spacing: 8){
                 Text("Delivery adres :")
                     .bold()
-                TextField("Your address", text: $vieModel.profile.address)
+                TextField("Your address", text: $viewModel.profile.address)
             }.padding(.horizontal)
             
             List {
-                Text("Your order here!")
+                if viewModel.orders.count == 0 {
+                    Text("No orders")
+                } else {
+                    ForEach(viewModel.orders, id: \.id) { order in
+                        OrderCell(order: order)
+                    }
+                }
+                
                 
             }.listStyle(.plain)
-            
-            
             
             Button {
                 isQuitAlertPresented.toggle()
             } label: {
-                Text("Quit")
+                Text("Exit")
                     .padding()
                     .padding(.horizontal, 30)
                     .background(Color.red)
                     .foregroundColor(.white)
                     .cornerRadius(20)
             }.padding()
-                .confirmationDialog("Did you have exit?", isPresented: $isQuitAlertPresented) {
+                .confirmationDialog("Did you have exit?", isPresented: $isQuitAlertPresented, titleVisibility: .visible) {
                     Button {
                         isAuthViewPresented.toggle()
                     } label: {
                         Text("Yes")
                     }
-                    
                 }
             
                 .fullScreenCover(isPresented: $isAuthViewPresented, onDismiss: nil) {
@@ -89,17 +93,18 @@ struct ProfileView: View {
                 }
         }
         .onSubmit {
-            vieModel.setProfile()
+            viewModel.setProfile()
         }
         
-        .onAppear{
-            self.vieModel.getProfile()
+        .onAppear {
+            self.viewModel.getProfile()
+            self.viewModel.getOrders()
         }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(vieModel: ProfileViewModel(profile: KKUser(id: "", name: "Koss", phone: 123456789, address: "Siemaszki")))
+        ProfileView(viewModel: ProfileViewModel(profile: KKUser(id: "", name: "Koss", phone: 123456789, address: "Siemaszki")))
     }
 }
