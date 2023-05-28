@@ -53,7 +53,7 @@ struct ProductDetailVIew: View {
 
             Button {
                 
-                var position = Position(id: UUID().uuidString, product: viewModel.product, count: self.count)
+                var position = Positions(id: UUID().uuidString, product: viewModel.product, count: self.count)
                 position.product.price = viewModel.getPrixe(size: size)
                 CartViewModel.shared.addPosition(position)
                 presentationMode.wrappedValue.dismiss()

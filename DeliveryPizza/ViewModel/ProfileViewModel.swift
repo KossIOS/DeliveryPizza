@@ -8,9 +8,22 @@
 import Foundation
 class ProfileViewModel: ObservableObject {
     @Published var profile: KKUser
+    @Published var orders : [Order] = [Order]()
     
     init(profile: KKUser) {
         self.profile = profile
+    }
+    
+    func getOrders() {
+        DatabaseService.shared.getOrders(by: AuthServise.shared.currentUser!.accessibilityHint) { result in
+            switch result {
+            case .success(let orders):
+                self.orders = orders
+                print("Summary orders: \(orders.count)")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
     func setProfile() {
