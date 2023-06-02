@@ -9,6 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 struct Order {
+    
     var id: String = UUID().uuidString
     var userID: String
     var positions = [Positions]()

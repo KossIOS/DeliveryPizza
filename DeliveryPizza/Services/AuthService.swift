@@ -25,7 +25,7 @@ class AuthServise {
                                     name: "",
                                     phone: 0,
                                     address: "")
-                DatabaseService.shared.setProfile(user: kkUser) { resultDB in
+                DataBaseService.shared.setProfile(user: kkUser) { resultDB in
                     switch resultDB {
                     case .success(_):
                         completion(.success(result.user))

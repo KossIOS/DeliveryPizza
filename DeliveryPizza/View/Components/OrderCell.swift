@@ -2,16 +2,17 @@
 //  OrderCell.swift
 //  DeliveryPizza
 //
-//  Created by Konstantyn Koroban on 28/05/2023.
+//  Created by Konstantyn Koroban on 02/06/2023.
 //
 
 import SwiftUI
 
 struct OrderCell: View {
     
-    @State var order: Order = Order(userID: "", date: Date(), status: "New")
+    @State var order: Order = Order(userID: "", date: Date(), status: "")
     
     var body: some View {
+        
         HStack {
             Text("\(order.date)")
             Text("\(order.cost)")

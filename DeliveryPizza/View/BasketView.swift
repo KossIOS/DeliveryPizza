@@ -55,7 +55,7 @@ struct BasketView: View {
                     print("Order")
                     var order = Order(userID: AuthServise.shared.currentUser!.uid, date: Date(), status: OrdersStatus.new.rawValue)
                     order.positions = self.viewModel.positions
-                    DatabaseService.shared.setOrder(order: order) { result in
+                    DataBaseService.shared.setOrder(order: order) { result in
                         switch result {
                             
                         case .success(let order):

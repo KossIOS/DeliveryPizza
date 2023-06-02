@@ -17,12 +17,12 @@ struct ProfileView: View {
     
     var body: some View {
         
-        VStack(alignment: .center, spacing: 10){
+        VStack(alignment: .center, spacing: 20){
             HStack(spacing: 16) {
                 Image("person")
                     .resizable()
                     .frame(width: 80, height: 80)
-                    .padding(20)
+                    .padding(8)
                     .background(Color("personColor"))
                     .clipShape(Circle())
                     .onTapGesture {
@@ -92,19 +92,19 @@ struct ProfileView: View {
                     AuthView()
                 }
         }
+
         .onSubmit {
-            viewModel.setProfile()
+            self.viewModel.setProfile()
         }
         
         .onAppear {
             self.viewModel.getProfile()
-            self.viewModel.getOrders()
         }
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(viewModel: ProfileViewModel(profile: KKUser(id: "", name: "Koss", phone: 123456789, address: "Siemaszki")))
+        ProfileView(viewModel: ProfileViewModel(profile: KKUser(id: "", name: "", phone: 123456789, address: "")))
     }
 }

@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct KKUser: Identifiable {
     
     var id: String

@@ -8,8 +8,8 @@
 import Foundation
 import FirebaseFirestore
 
-class DatabaseService {
-    static let shared = DatabaseService()
+class DataBaseService {
+    static let shared = DataBaseService()
     private let db = Firestore.firestore()
     
     private var usersRef: CollectionReference {
@@ -21,6 +21,25 @@ class DatabaseService {
     }
     
     private init() { }
+    
+    func getPositions(by orderID: String, completion: @escaping(Result<[Positions], Error>) -> ()) {
+        
+        let positionRef = ordersRef.document(orderID).collection("positions")
+        positionRef.getDocuments { qSnap, error in
+            if let querySnapshot = qSnap {
+                var positions = [Positions]()
+                
+                for doc in querySnapshot.documents {
+                    if let position = Positions(doc: doc) {
+                        positions.append(position)
+                    }
+                }
+                completion(.success(positions))
+            } else if let error = error {
+                completion(.failure(error))
+            }
+        }
+    }
     
     func getOrders(by userID: String?, completion: @escaping(Result<[Order], Error>) -> ()) {
         self.ordersRef.getDocuments { qSnap, error in
@@ -72,8 +91,10 @@ class DatabaseService {
         completion(.success(positions))
     }
     
+    
+    
     func setProfile(user: KKUser, completion: @escaping (Result<KKUser, Error>) -> ()) {
-        usersRef.document(user.id).setData(user.representation) {error in
+        usersRef.document(user.id).setData(user.representation) { error in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -82,7 +103,7 @@ class DatabaseService {
         }
     }
     
-    func getProfile(copletion: @escaping (Result<KKUser, Error>) -> ()) {
+    func getProfile(completion: @escaping (Result<KKUser, Error>) -> ()) {
         usersRef.document(AuthServise.shared.currentUser!.uid).getDocument { docSnapshot, error in
             guard let snap = docSnapshot else { return }
             guard let data = snap.data() else { return }
@@ -92,7 +113,7 @@ class DatabaseService {
             guard let address = data["address"] as? String else {return}
             let user = KKUser(id: id, name: userName, phone: phone, address: address)
             
-            copletion(.success(user))
+            completion(.success(user))
         }
     }
 }
