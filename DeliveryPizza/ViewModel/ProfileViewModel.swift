@@ -6,7 +6,9 @@
 //
 
 import Foundation
+
 class ProfileViewModel: ObservableObject {
+    
     @Published var profile: KKUser
     @Published var orders : [Order] = [Order]()
     
@@ -15,10 +17,24 @@ class ProfileViewModel: ObservableObject {
     }
     
     func getOrders() {
-        DatabaseService.shared.getOrders(by: AuthServise.shared.currentUser!.accessibilityHint) { result in
+        DataBaseService.shared.getOrders(by: AuthServise.shared.currentUser!.accessibilityHint) { result in
             switch result {
             case .success(let orders):
                 self.orders = orders
+                for(index, order) in self.orders.enumerated() {
+                    DataBaseService.shared.getPositions(by: order.id) { result in
+                        switch result {
+                        case .success(let positions):
+                            self.orders[index].positions = positions
+                            print(self.orders[index].cost)
+                        case .failure(let error):
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+                
+                
+                
                 print("Summary orders: \(orders.count)")
             case .failure(let error):
                 print(error.localizedDescription)
@@ -26,8 +42,9 @@ class ProfileViewModel: ObservableObject {
         }
     }
     
+    
     func setProfile() {
-        DatabaseService.shared.setProfile(user: self.profile) { result in
+        DataBaseService.shared.setProfile(user: self.profile) { result in
             switch result {
             case.success(let user):
                 print(user.name)
@@ -38,15 +55,13 @@ class ProfileViewModel: ObservableObject {
     }
     
     func getProfile() {
-        DatabaseService.shared.getProfile { result in
+        DataBaseService.shared.getProfile { result in
             switch result {
-            case.success(let user):
+            case .success(let user):
                 self.profile = user
-            case.failure(let error):
+            case .failure(let error):
                 print(error.localizedDescription)
             }
         }
-        
     }
-    
 }
