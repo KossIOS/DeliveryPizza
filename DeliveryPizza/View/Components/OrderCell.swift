@@ -25,8 +25,8 @@ struct OrderCell: View {
     }
 }
 
-struct OrderCell_Previews: PreviewProvider {
-    static var previews: some View {
-        OrderCell()
-    }
-}
+//struct OrderCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        OrderCell()
+//    }
+//}

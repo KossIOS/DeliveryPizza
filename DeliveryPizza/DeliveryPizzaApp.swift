@@ -17,6 +17,9 @@ struct DeliveryPizzaApp: App {
     var body: some Scene {
         WindowGroup {
             if let user = AuthServise.shared.currentUser {
+                if user.uid == "wxNguxyGSbc1u2FxlOlRaCjj60r1" {
+                    AdminOrdersView()
+                }
                 let viewModel = MainTabBarViewModel(user: user)
                 MainTabBar(viewModel: viewModel)
             } else {
