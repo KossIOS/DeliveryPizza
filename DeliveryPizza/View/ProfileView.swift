@@ -98,7 +98,7 @@ struct ProfileView: View {
         }
         
         .onAppear {
-            self.viewModel.getProfile()
+           
         }
     }
 }

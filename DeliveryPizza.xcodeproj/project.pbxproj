@@ -26,6 +26,8 @@
 		CA892FDB29D8C57000A47B86 /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA892FDA29D8C57000A47B86 /* PositionCell.swift */; };
 		CAC7CE0329FCE75000A6F56E /* KKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7CE0229FCE75000A6F56E /* KKUser.swift */; };
 		CAC7CE0529FCEA9000A6F56E /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7CE0429FCEA9000A6F56E /* DataBaseService.swift */; };
+		CAD05AC02A33C77E003C1DBC /* AdminOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD05ABF2A33C77E003C1DBC /* AdminOrdersView.swift */; };
+		CAD05AC52A33C948003C1DBC /* AdminOrdersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD05AC42A33C948003C1DBC /* AdminOrdersViewModel.swift */; };
 		CAF463712A2A152100874842 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF463702A2A152100874842 /* OrderCell.swift */; };
 		CAFBC82F29CF94CB0089A4C1 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBC82E29CF94CB0089A4C1 /* MainTabBar.swift */; };
 		CAFBC83129CF9FE30089A4C1 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFBC83029CF9FE30089A4C1 /* CatalogView.swift */; };
@@ -55,6 +57,8 @@
 		CA892FDA29D8C57000A47B86 /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		CAC7CE0229FCE75000A6F56E /* KKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKUser.swift; sourceTree = "<group>"; };
 		CAC7CE0429FCEA9000A6F56E /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
+		CAD05ABF2A33C77E003C1DBC /* AdminOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersView.swift; sourceTree = "<group>"; };
+		CAD05AC42A33C948003C1DBC /* AdminOrdersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersViewModel.swift; sourceTree = "<group>"; };
 		CAF463702A2A152100874842 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		CAFBC82E29CF94CB0089A4C1 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		CAFBC83029CF9FE30089A4C1 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
@@ -128,9 +132,18 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		CAD05AC12A33C796003C1DBC /* AdminInterface */ = {
+			isa = PBXGroup;
+			children = (
+				CAD05ABF2A33C77E003C1DBC /* AdminOrdersView.swift */,
+			);
+			name = AdminInterface;
+			sourceTree = "<group>";
+		};
 		CAFBC83629D090390089A4C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CAD05AC12A33C796003C1DBC /* AdminInterface */,
 				CA1CD0FD29A699E10078B827 /* AuthView.swift */,
 				CAFBC82E29CF94CB0089A4C1 /* MainTabBar.swift */,
 				CAFBC83429CFA0650089A4C1 /* ProfileView.swift */,
@@ -167,6 +180,7 @@
 		CAFBC83F29D09CA20089A4C1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CAD05AC42A33C948003C1DBC /* AdminOrdersViewModel.swift */,
 				CAFBC83D29D09C770089A4C1 /* CatalogViewModel.swift */,
 				CA2B02E129D2BE920088C572 /* ProductDetailViewModel.swift */,
 				CA5EAEC629D4FD6000F148D0 /* CartViewModel.swift */,
@@ -256,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA5EAEC729D4FD6000F148D0 /* CartViewModel.swift in Sources */,
+				CAD05AC52A33C948003C1DBC /* AdminOrdersViewModel.swift in Sources */,
 				CA5B28512A0230C90057A323 /* ProfileViewModel.swift in Sources */,
 				CA1F0D6D2A15410B00FC5419 /* Order.swift in Sources */,
 				CAFBC82F29CF94CB0089A4C1 /* MainTabBar.swift in Sources */,
@@ -266,6 +281,7 @@
 				CAFBC83A29D0928F0089A4C1 /* ProductViewCell.swift in Sources */,
 				CA892FDB29D8C57000A47B86 /* PositionCell.swift in Sources */,
 				CA4460A829ED15D9004A772C /* AuthService.swift in Sources */,
+				CAD05AC02A33C77E003C1DBC /* AdminOrdersView.swift in Sources */,
 				CA2B02E229D2BE920088C572 /* ProductDetailViewModel.swift in Sources */,
 				CAF463712A2A152100874842 /* OrderCell.swift in Sources */,
 				CA1F0D6F2A15497400FC5419 /* OrderStatus.swift in Sources */,
