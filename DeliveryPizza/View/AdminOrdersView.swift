@@ -10,15 +10,8 @@ import SwiftUI
 struct AdminOrdersView: View {
     @StateObject var viewModel = AdminOrdersViewModel()
     var body: some View {
-        List {
-            ForEach(viewModel.orders, id: \.id) { order in
-                OrderCell(order: order)
-                
-            }
-        }.listStyle(.plain)
-            .onAppear {
-                viewModel.getOrders()
-            }
+        Text("Hello World!")
+            .background(Color.mint)
     }
 }
 
