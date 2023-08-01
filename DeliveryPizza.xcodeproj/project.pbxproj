@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8ABF255C2A796B8900144772 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF255B2A796B8900144772 /* OrderView.swift */; };
+		8ABF255E2A796B9E00144772 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF255D2A796B9E00144772 /* OrderViewModel.swift */; };
 		CA1158F429E3DE7F00821860 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1158F329E3DE7F00821860 /* GoogleService-Info.plist */; };
 		CA1158F729E3E22C00821860 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CA1158F629E3E22C00821860 /* FirebaseAuth */; };
 		CA1158F929E3E22C00821860 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CA1158F829E3E22C00821860 /* FirebaseFirestore */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8ABF255B2A796B8900144772 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		8ABF255D2A796B9E00144772 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		CA1158F329E3DE7F00821860 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CA1CD0F829A699E10078B827 /* DeliveryPizza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliveryPizza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1CD0FB29A699E10078B827 /* DeliveryPizzaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPizzaApp.swift; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				CAD05ABF2A33C77E003C1DBC /* AdminOrdersView.swift */,
+				8ABF255B2A796B8900144772 /* OrderView.swift */,
 			);
 			name = AdminInterface;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				CA5EAEC629D4FD6000F148D0 /* CartViewModel.swift */,
 				CA5B72ED29F0882F00DF66F6 /* MainTabBarViewModel.swift */,
 				CA5B28502A0230C90057A323 /* ProfileViewModel.swift */,
+				8ABF255D2A796B9E00144772 /* OrderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -288,9 +294,11 @@
 				CA5EAEC929D4FDDB00F148D0 /* Positions.swift in Sources */,
 				CAFBC83529CFA0650089A4C1 /* ProfileView.swift in Sources */,
 				CAC7CE0329FCE75000A6F56E /* KKUser.swift in Sources */,
+				8ABF255C2A796B8900144772 /* OrderView.swift in Sources */,
 				CAFBC83329CFA0390089A4C1 /* BasketView.swift in Sources */,
 				CAFBC83829D090E00089A4C1 /* Product.swift in Sources */,
 				CAFBC83E29D09C770089A4C1 /* CatalogViewModel.swift in Sources */,
+				8ABF255E2A796B9E00144772 /* OrderViewModel.swift in Sources */,
 				CAFBC84129D0A1660089A4C1 /* ProductDetailVIew.swift in Sources */,
 				CA5B72EE29F0882F00DF66F6 /* MainTabBarViewModel.swift in Sources */,
 			);
