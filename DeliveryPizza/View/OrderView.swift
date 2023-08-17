@@ -9,6 +9,13 @@ import SwiftUI
 
 struct OrderView: View {
     @StateObject var viewModel: OrderViewModel
+    var statuses: [String] {
+        var sts = [String]()
+        for status in OrdersStatus.allCases {
+            sts.append(status.rawValue)
+        }
+        return sts
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -17,18 +24,39 @@ struct OrderView: View {
             Text("\(viewModel.user.phone)")
                 .bold()
             Text("\(viewModel.user.phone)")
-            List {
-                ForEach(viewModel.order.positions, id: \.id) { position in PositionCell(position: position)
-                }
-                Text("Totaly: \(viewModel.order.cost) $")
-                    .bold()
-            }
         }.padding()
-            .onAppear {
+            .onAppear() {
                 viewModel.getUserData()
             }
+        
+        Picker(selection: $viewModel.order.status) { ForEach(statuses, id: \.self) { status in Text(status)
+            }
+            
+        } label: {
+            Text("Status Order")
+                .pickerStyle(.segmented)
+        }.onChange(of: viewModel.order.status) {newStatus in
+            DataBaseService.shared.setOrder(order: viewModel.order) { result in
+                switch result {
+                case .success(let order):
+                    print(order.status)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+            
+        }
+        
+        List {
+            ForEach(viewModel.order.positions, id: \.id) { position in PositionCell(position: position)
+            }
+            Text("Totaly: \(viewModel.order.cost) $")
+                .bold()
+        }
     }
+    
 }
+
 
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {

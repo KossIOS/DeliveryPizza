@@ -131,11 +131,12 @@ struct AuthView: View {
             .background(Image("background")).ignoresSafeArea()
             .animation(Animation.easeOut(duration: 0.5), value: is_Auth)
             .fullScreenCover(isPresented: $isTabViewShow) {
-                
-                let mainTabBarViewModel = MainTabBarViewModel(user: AuthServise.shared.currentUser!)
-                MainTabBar(viewModel: mainTabBarViewModel)
+                if AuthServise.shared.currentUser?.uid == "wxNguxyGSbc1u2FxlOlRaCjj60r1" {
+                } else {
+                    let mainTabBarViewModel = MainTabBarViewModel(user: AuthServise.shared.currentUser!)
+                    MainTabBar(viewModel: mainTabBarViewModel)
+                }
             }
-        
     }
 }
 
