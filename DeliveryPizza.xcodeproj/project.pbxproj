@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0DB0C32A92894000A7C81C /* ImagePiker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0DB0C22A92894000A7C81C /* ImagePiker.swift */; };
+		8A0DB0C52A928EDB00A7C81C /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0DB0C42A928EDB00A7C81C /* AddProductView.swift */; };
 		8ABF255C2A796B8900144772 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF255B2A796B8900144772 /* OrderView.swift */; };
 		8ABF255E2A796B9E00144772 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF255D2A796B9E00144772 /* OrderViewModel.swift */; };
 		CA1158F429E3DE7F00821860 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1158F329E3DE7F00821860 /* GoogleService-Info.plist */; };
@@ -42,6 +44,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A0DB0C22A92894000A7C81C /* ImagePiker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePiker.swift; sourceTree = "<group>"; };
+		8A0DB0C42A928EDB00A7C81C /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
 		8ABF255B2A796B8900144772 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		8ABF255D2A796B9E00144772 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		CA1158F329E3DE7F00821860 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 			children = (
 				CAD05ABF2A33C77E003C1DBC /* AdminOrdersView.swift */,
 				8ABF255B2A796B8900144772 /* OrderView.swift */,
+				8A0DB0C42A928EDB00A7C81C /* AddProductView.swift */,
 			);
 			name = AdminInterface;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFBC83929D0928F0089A4C1 /* ProductViewCell.swift */,
+				8A0DB0C22A92894000A7C81C /* ImagePiker.swift */,
 				CA892FDA29D8C57000A47B86 /* PositionCell.swift */,
 				CAF463702A2A152100874842 /* OrderCell.swift */,
 			);
@@ -291,6 +297,7 @@
 				CA2B02E229D2BE920088C572 /* ProductDetailViewModel.swift in Sources */,
 				CAF463712A2A152100874842 /* OrderCell.swift in Sources */,
 				CA1F0D6F2A15497400FC5419 /* OrderStatus.swift in Sources */,
+				8A0DB0C52A928EDB00A7C81C /* AddProductView.swift in Sources */,
 				CA5EAEC929D4FDDB00F148D0 /* Positions.swift in Sources */,
 				CAFBC83529CFA0650089A4C1 /* ProfileView.swift in Sources */,
 				CAC7CE0329FCE75000A6F56E /* KKUser.swift in Sources */,
@@ -300,6 +307,7 @@
 				CAFBC83E29D09C770089A4C1 /* CatalogViewModel.swift in Sources */,
 				8ABF255E2A796B9E00144772 /* OrderViewModel.swift in Sources */,
 				CAFBC84129D0A1660089A4C1 /* ProductDetailVIew.swift in Sources */,
+				8A0DB0C32A92894000A7C81C /* ImagePiker.swift in Sources */,
 				CA5B72EE29F0882F00DF66F6 /* MainTabBarViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +440,9 @@
 				DEVELOPMENT_TEAM = JJF74M9Z2N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeliveryPizza/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "allow use camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "allow open galery for add photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,6 +472,9 @@
 				DEVELOPMENT_TEAM = JJF74M9Z2N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeliveryPizza/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "allow use camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "allow open galery for add photo";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
