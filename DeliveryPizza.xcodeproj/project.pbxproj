@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A0DB0C32A92894000A7C81C /* ImagePiker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0DB0C22A92894000A7C81C /* ImagePiker.swift */; };
 		8A0DB0C52A928EDB00A7C81C /* AddProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0DB0C42A928EDB00A7C81C /* AddProductView.swift */; };
+		8A6EE88A2A987C3200F565FC /* StorageSerive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6EE8892A987C3200F565FC /* StorageSerive.swift */; };
 		8ABF255C2A796B8900144772 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF255B2A796B8900144772 /* OrderView.swift */; };
 		8ABF255E2A796B9E00144772 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF255D2A796B9E00144772 /* OrderViewModel.swift */; };
 		CA1158F429E3DE7F00821860 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CA1158F329E3DE7F00821860 /* GoogleService-Info.plist */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		8A0DB0C22A92894000A7C81C /* ImagePiker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePiker.swift; sourceTree = "<group>"; };
 		8A0DB0C42A928EDB00A7C81C /* AddProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductView.swift; sourceTree = "<group>"; };
+		8A6EE8892A987C3200F565FC /* StorageSerive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageSerive.swift; sourceTree = "<group>"; };
 		8ABF255B2A796B8900144772 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		8ABF255D2A796B9E00144772 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		CA1158F329E3DE7F00821860 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			children = (
 				CA4460A729ED15D9004A772C /* AuthService.swift */,
 				CAC7CE0429FCEA9000A6F56E /* DataBaseService.swift */,
+				8A6EE8892A987C3200F565FC /* StorageSerive.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				CAD05AC52A33C948003C1DBC /* AdminOrdersViewModel.swift in Sources */,
 				CA5B28512A0230C90057A323 /* ProfileViewModel.swift in Sources */,
 				CA1F0D6D2A15410B00FC5419 /* Order.swift in Sources */,
+				8A6EE88A2A987C3200F565FC /* StorageSerive.swift in Sources */,
 				CAFBC82F29CF94CB0089A4C1 /* MainTabBar.swift in Sources */,
 				CAC7CE0529FCEA9000A6F56E /* DataBaseService.swift in Sources */,
 				CA1CD0FE29A699E10078B827 /* AuthView.swift in Sources */,
