@@ -13,6 +13,7 @@ struct AddProductView: View {
     @State private var title = ""
     @State private var descript = ""
     @State private var price: Int? = nil
+    @Environment (\.dismiss) var dissmis
     
     var body: some View {
         VStack {
@@ -34,8 +35,25 @@ struct AddProductView: View {
             TextField("Description product", text: $descript)
                 .padding()
             
-            Button{
-                print("Save")
+            Button {
+                guard let price = price else {
+                    print("No")
+                    return
+                }
+                
+                let product = Product(id: UUID().uuidString, title: title, price: price, descript: descript)
+                guard let imageData = image.jpegData(compressionQuality: 0.1) else { return }
+                DataBaseService.shared.setProduct(product: product, image: imageData) { result in
+                    switch result {
+                        
+                    case .success(let product):
+                        print(product.title)
+                        dissmis()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+                
             } label: {
                 Text("Save")
                     .padding()
