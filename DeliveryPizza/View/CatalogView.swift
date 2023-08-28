@@ -8,15 +8,32 @@
 import SwiftUI
 
 struct CatalogView: View {
-    let layout = [GridItem(.adaptive(minimum: screen.width / 2.2))]
+    let layoutForPopular = [GridItem(.adaptive(minimum: screen.width / 2.2))]
+    let layoutForPizza = [GridItem(.adaptive(minimum: screen.width / 2.4))]
+    @StateObject var viewModel = CatalogViewModel()
     
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
             Section("Polular") {
                 ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHGrid(rows: layout, spacing: 12) {
-                        ForEach(CatalogViewModel.shared.products, id: \.id) { item in
+                    LazyHGrid(rows: layoutForPopular, spacing: 16) {
+                        ForEach(CatalogViewModel.shared.popularProducts, id: \.id) { item in
+                            NavigationLink {
+                                let viewModel = ProductDetailViewModel(product: item)
+                                ProductDetailVIew(viewModel: viewModel)
+                            } label: {
+                                ProductViewCell(product: item)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }.padding()
+                }
+            }
+            Section("Pizza") {
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVGrid(columns: layoutForPizza) {
+                        ForEach(CatalogViewModel.shared.pizzas, id: \.id) { item in
                             NavigationLink {
                                 let viewModel = ProductDetailViewModel(product: item)
                                 ProductDetailVIew(viewModel: viewModel)
@@ -29,6 +46,9 @@ struct CatalogView: View {
                 }
             }
         }.navigationBarTitle(Text("Catalog"))
+            .onAppear {
+                self.viewModel.getProducts()
+            }
     }
 }
 

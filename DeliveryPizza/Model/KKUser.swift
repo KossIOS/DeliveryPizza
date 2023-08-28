@@ -9,7 +9,7 @@ import Foundation
 
 struct KKUser: Identifiable {
     
-    var id: String
+    var id: String = UUID().uuidString
     var name: String
     var phone: Int
     var address: String

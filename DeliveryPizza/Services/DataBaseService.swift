@@ -12,21 +12,21 @@ class DataBaseService {
     static let shared = DataBaseService()
     private let db = Firestore.firestore()
     
-    private var usersRef: CollectionReference {return db.collection("users")}
-    private var ordersRef: CollectionReference {return db.collection("orders")}
-    private var productsRef : CollectionReference { db.collection("products")}
+    private var usersRef: CollectionReference { db.collection("users")}
+    private var ordersRef: CollectionReference { db.collection("orders")}
+    private var productsRef: CollectionReference { db.collection("products")}
     
     private init() { }
     
-    func getPositions(by orderID: String, completion: @escaping(Result<[Positions], Error>) -> ()) {
+    func getPositions(by orderID: String, completion: @escaping(Result<[Position], Error>) -> ()) {
         
         let positionRef = ordersRef.document(orderID).collection("positions")
         positionRef.getDocuments { qSnap, error in
             if let querySnapshot = qSnap {
-                var positions = [Positions]()
+                var positions = [Position]()
                 
                 for doc in querySnapshot.documents {
-                    if let position = Positions(doc: doc) {
+                    if let position = Position(doc: doc) {
                         positions.append(position)
                     }
                 }
@@ -79,7 +79,7 @@ class DataBaseService {
         }
     }
     
-    func setPosition(to orderId: String, positions: [Positions], completion: @escaping(Result<[Positions], Error>) -> ()){
+    func setPosition(to orderId: String, positions: [Position], completion: @escaping(Result<[Position], Error>) -> ()){
         let positionsRef = ordersRef.document(orderId).collection("positions")
         for position in positions {
             positionsRef.document(position.id).setData(position.representation)
@@ -132,4 +132,26 @@ class DataBaseService {
             }
         }
     }
+    
+    func getProducts(completion: @escaping (Result<[Product], Error>) -> ()) {
+        self.productsRef.getDocuments { qSnap, error in
+            guard let qSnap = qSnap else {
+                if let error = error {
+                    completion(.failure(error))
+                }
+                return
+            }
+            let docs = qSnap.documents {
+                var products = [Product]()
+                for doc in docs {
+                    guard let product = Product(doc: doc) else { return }
+                    product.append(product)
+                }
+                completion(.success(products))
+            }
+            
+            
+        }
+    }
 }
+

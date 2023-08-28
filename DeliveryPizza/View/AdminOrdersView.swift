@@ -28,7 +28,7 @@ struct AdminOrdersView: View {
                 Button {
                     isShowAddProductView.toggle()
                 } label: {
-                    Text("Add Thing")
+                    Text("Add Product")
                         .foregroundColor(.white)
                         .padding()
                         .background(Color.green)
