@@ -20,7 +20,7 @@ struct ProductDetailVIew: View {
         VStack {
             VStack(alignment: .leading) {
                 
-                Image("Margherita")
+                Image(uiImage: self.viewModel.image! )
                     .resizable()
                     .frame(maxWidth: .infinity, maxHeight: 260)
                 HStack {
@@ -53,7 +53,7 @@ struct ProductDetailVIew: View {
 
             Button {
                 
-                var position = Positions(id: UUID().uuidString, product: viewModel.product, count: self.count)
+                var position = Position(id: UUID().uuidString, product: viewModel.product, count: self.count)
                 position.product.price = viewModel.getPrixe(size: size)
                 CartViewModel.shared.addPosition(position)
                 presentationMode.wrappedValue.dismiss()
@@ -68,7 +68,9 @@ struct ProductDetailVIew: View {
                     .background(LinearGradient(colors: [Color("yellow"), Color("orange")], startPoint: .leading, endPoint: .trailing))
                     .cornerRadius(20)
             }
-            
+            .onAppear{
+                self.viewModel.getImage()
+            }
             Spacer()
         }
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PositionCell: View {
     
-    let position: Positions
+    let position: Position
     
     var body: some View {
         
@@ -26,6 +26,6 @@ struct PositionCell: View {
 
 struct PositionCell_Previews: PreviewProvider {
     static var previews: some View {
-        PositionCell(position: Positions(id: UUID().uuidString, product: Product(id: UUID().uuidString, title: "Margherita", imageUrl: "MArgherita", price: 350, descript: "Wege Pizza"), count: 3))
+        PositionCell(position: Position(id: UUID().uuidString, product: Product(id: UUID().uuidString, title: "Margherita", imageUrl: "MArgherita", price: 350, descript: "Wege Pizza"), count: 3))
     }
 }

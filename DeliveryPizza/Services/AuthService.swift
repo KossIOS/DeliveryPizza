@@ -22,7 +22,7 @@ class AuthServise {
         try! auth.signOut()
     }
     
-    func  singUp(email: String, password: String, completion:  @escaping (Result<User, Error>) -> ()) {
+    func singUp(email: String, password: String, completion:  @escaping (Result<User, Error>) -> ()) {
         auth.createUser(withEmail: email, password: password) { result, error in
             if let result = result {
                 let kkUser = KKUser(id: result.user.uid,

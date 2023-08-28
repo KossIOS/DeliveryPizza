@@ -41,7 +41,7 @@ struct AddProductView: View {
                     return
                 }
                 
-                let product = Product(id: UUID().uuidString, title: title, price: price, descript: descript)
+                let product = Product(id: UUID().uuidString, title: title, imageUrl: "", price: price, descript: descript)
                 guard let imageData = image.jpegData(compressionQuality: 0.1) else { return }
                 DataBaseService.shared.setProduct(product: product, image: imageData) { result in
                     switch result {

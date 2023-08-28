@@ -13,7 +13,7 @@ class CartViewModel: ObservableObject {
     
     private init() {}
     
-    @Published var positions = [Positions]()
+    @Published var positions = [Position]()
     var cost: Int {
         var sum = 0
         for pos in positions {
@@ -21,7 +21,7 @@ class CartViewModel: ObservableObject {
         }
         return sum
     }
-    func addPosition(_ position: Positions) {
+    func addPosition(_ position: Position) {
         self.positions.append(position)
     }
 }

@@ -23,40 +23,37 @@ struct OrderView: View {
                 .font(.title3).bold()
             Text("\(viewModel.user.phone)")
                 .bold()
-            Text("\(viewModel.user.phone)")
+            Text("\(viewModel.user.address)")
+            
+                    Picker(selection: $viewModel.order.status) {
+                        ForEach(statuses, id: \.self) { status in Text(status)
+                        }
+                    } label: {
+                        Text("Status Order")
+                    }
+                    .pickerStyle(.segmented)
+                    .onChange(of: viewModel.order.status) { newStatus in
+                        DataBaseService.shared.setOrder(order: viewModel.order) { result in
+                            switch result {
+                            case .success(let order):
+                                print(order.status)
+                            case .failure(let error):
+                                print(error.localizedDescription)
+                            }
+                        }
+                    }
+            
+            List {
+                ForEach(viewModel.order.positions, id: \.id) { position in PositionCell(position: position)
+                }
+                Text("Totaly: \(viewModel.order.cost) $")
+            }
         }.padding()
-            .onAppear() {
+            .onAppear {
                 viewModel.getUserData()
             }
-        
-        Picker(selection: $viewModel.order.status) { ForEach(statuses, id: \.self) { status in Text(status)
-            }
-            
-        } label: {
-            Text("Status Order")
-                .pickerStyle(.segmented)
-        }.onChange(of: viewModel.order.status) {newStatus in
-            DataBaseService.shared.setOrder(order: viewModel.order) { result in
-                switch result {
-                case .success(let order):
-                    print(order.status)
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
-            
-        }
-        
-        List {
-            ForEach(viewModel.order.positions, id: \.id) { position in PositionCell(position: position)
-            }
-            Text("Totaly: \(viewModel.order.cost) $")
-                .bold()
-        }
     }
-    
 }
-
 
 struct OrderView_Previews: PreviewProvider {
     static var previews: some View {

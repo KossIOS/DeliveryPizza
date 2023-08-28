@@ -12,7 +12,7 @@ struct Order {
     
     var id: String = UUID().uuidString
     var userID: String
-    var positions = [Positions]()
+    var positions = [Position]()
     var date: Date
     var status: String
     
@@ -33,7 +33,7 @@ struct Order {
         return repres
     }
     
-    init(id: String = UUID().uuidString, userID: String, positions: [Positions] = [Positions](), date: Date, status: String) {
+    init(id: String = UUID().uuidString, userID: String, positions: [Position] = [Position](), date: Date, status: String) {
         self.id = id
         self.userID = userID
         self.positions = positions

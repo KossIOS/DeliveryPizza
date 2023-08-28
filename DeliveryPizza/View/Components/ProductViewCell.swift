@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct ProductViewCell: View {
+    
     var product : Product
+    
+    @State var uiImage = UIImage(named: "cell" )
     var body: some View {
+        
         VStack(spacing: 2){
-            Image("cell")
+            Image(uiImage: uiImage!)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(maxWidth: screen.width * 0.45)
                 .clipped()
-                
+            
             
             HStack {
                 Text(product.title)
@@ -31,7 +35,18 @@ struct ProductViewCell: View {
             .background(.white)
             .cornerRadius(20)
             .shadow(radius: 4)
-           
+            .onAppear{
+                StorageService.shared.downloadProductImage(id: self.product.id) { result in
+                    switch result {
+                    case.success(let data):
+                        if let img = UIImage(data: data) {
+                            self.uiImage = img
+                        }
+                    case.failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            }
     }
 }
 

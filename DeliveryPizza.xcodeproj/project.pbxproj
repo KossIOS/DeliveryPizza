@@ -27,7 +27,7 @@
 		CA5B28512A0230C90057A323 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5B28502A0230C90057A323 /* ProfileViewModel.swift */; };
 		CA5B72EE29F0882F00DF66F6 /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5B72ED29F0882F00DF66F6 /* MainTabBarViewModel.swift */; };
 		CA5EAEC729D4FD6000F148D0 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5EAEC629D4FD6000F148D0 /* CartViewModel.swift */; };
-		CA5EAEC929D4FDDB00F148D0 /* Positions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5EAEC829D4FDDB00F148D0 /* Positions.swift */; };
+		CA5EAEC929D4FDDB00F148D0 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5EAEC829D4FDDB00F148D0 /* Position.swift */; };
 		CA892FDB29D8C57000A47B86 /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA892FDA29D8C57000A47B86 /* PositionCell.swift */; };
 		CAC7CE0329FCE75000A6F56E /* KKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7CE0229FCE75000A6F56E /* KKUser.swift */; };
 		CAC7CE0529FCEA9000A6F56E /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC7CE0429FCEA9000A6F56E /* DataBaseService.swift */; };
@@ -63,7 +63,7 @@
 		CA5B28502A0230C90057A323 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		CA5B72ED29F0882F00DF66F6 /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		CA5EAEC629D4FD6000F148D0 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
-		CA5EAEC829D4FDDB00F148D0 /* Positions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Positions.swift; sourceTree = "<group>"; };
+		CA5EAEC829D4FDDB00F148D0 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		CA892FDA29D8C57000A47B86 /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		CAC7CE0229FCE75000A6F56E /* KKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKUser.swift; sourceTree = "<group>"; };
 		CAC7CE0429FCEA9000A6F56E /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFBC83729D090E00089A4C1 /* Product.swift */,
-				CA5EAEC829D4FDDB00F148D0 /* Positions.swift */,
+				CA5EAEC829D4FDDB00F148D0 /* Position.swift */,
 				CAC7CE0229FCE75000A6F56E /* KKUser.swift */,
 				CA1F0D6C2A15410B00FC5419 /* Order.swift */,
 				CA1F0D6E2A15497400FC5419 /* OrderStatus.swift */,
@@ -302,7 +302,7 @@
 				CAF463712A2A152100874842 /* OrderCell.swift in Sources */,
 				CA1F0D6F2A15497400FC5419 /* OrderStatus.swift in Sources */,
 				8A0DB0C52A928EDB00A7C81C /* AddProductView.swift in Sources */,
-				CA5EAEC929D4FDDB00F148D0 /* Positions.swift in Sources */,
+				CA5EAEC929D4FDDB00F148D0 /* Position.swift in Sources */,
 				CAFBC83529CFA0650089A4C1 /* ProfileView.swift in Sources */,
 				CAC7CE0329FCE75000A6F56E /* KKUser.swift in Sources */,
 				8ABF255C2A796B8900144772 /* OrderView.swift in Sources */,
