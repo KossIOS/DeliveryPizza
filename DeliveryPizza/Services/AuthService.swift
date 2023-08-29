@@ -35,10 +35,8 @@ class AuthServise {
                         completion(.success(result.user))
                     case .failure(let error):
                         completion(.failure(error))
-                        
                     }
                 }
-                
             } else if let error = error {
                 completion(.failure(error))
             }

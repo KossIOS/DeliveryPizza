@@ -32,17 +32,14 @@ class ProfileViewModel: ObservableObject {
                         }
                     }
                 }
-                
-                
-                
+
                 print("Summary orders: \(orders.count)")
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-    
-    
+      
     func setProfile() {
         DataBaseService.shared.setProfile(user: self.profile) { result in
             switch result {

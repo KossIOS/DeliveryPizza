@@ -64,15 +64,15 @@ class CatalogViewModel: ObservableObject {
                 descript: "Wegeterian Pizza"),
         
     ]
-    func getProducts() {
-        DataBaseService.shared.getProducts { result in
-            switch result {
-                
-            case .success(let products):
-                self.pizzas = products
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
+//    func getProducts() {
+//        DataBaseService.shared.getProducts { result in
+//            switch result {
+//
+//            case .success(let products):
+//                self.pizzas = products
+//            case .failure(let error):
+//                print(error.localizedDescription)
+//            }
+//        }
+//    }
 }
