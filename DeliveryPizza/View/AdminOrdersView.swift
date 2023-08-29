@@ -9,8 +9,8 @@ import SwiftUI
 
 struct AdminOrdersView: View {
     @StateObject var viewModel = AdminOrdersViewModel()
-    @State var isOrderViewShow = false
-    @State var isShowAuthView = false
+    @State private var isOrderViewShow = false
+    @State private var isShowAuthView = false
     @State private var isShowAddProductView = false
     
     

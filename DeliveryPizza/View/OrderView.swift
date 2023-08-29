@@ -50,7 +50,7 @@ struct OrderView: View {
             }
         }.padding()
             .onAppear {
-                viewModel.getUserData()
+//                viewModel.getUserData()
             }
     }
 }

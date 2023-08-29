@@ -19,9 +19,10 @@ struct DeliveryPizzaApp: App {
             if let user = AuthServise.shared.currentUser {
                 if user.uid == "wxNguxyGSbc1u2FxlOlRaCjj60r1" {
                     AdminOrdersView()
+                } else {
+                    let viewModel = MainTabBarViewModel(user: user)
+                    MainTabBar(viewModel: viewModel)
                 }
-                let viewModel = MainTabBarViewModel(user: user)
-                MainTabBar(viewModel: viewModel)
             } else {
                 AuthView()
             }
@@ -34,7 +35,5 @@ struct DeliveryPizzaApp: App {
             print("Ok")
             return true
         }
-        
     }
-    
 }
