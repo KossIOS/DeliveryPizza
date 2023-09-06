@@ -42,6 +42,7 @@ struct Order {
     }
     
     init?(doc: QueryDocumentSnapshot) {
+        
         let data = doc.data()
         guard let id = data["id"] as? String else { return nil }
         guard let userID = data["userID"] as? String else { return nil }

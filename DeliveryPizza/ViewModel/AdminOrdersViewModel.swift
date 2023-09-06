@@ -11,7 +11,7 @@ class AdminOrdersViewModel: ObservableObject {
     @Published var orders = [Order]()
     var currentOrder = Order(userID: "", date: Date(), status: "New")
     func getOrders() {
-        DataBaseService.shared.getOrders(by: nil) { result in
+        DataBaseService.shared.gerOrders(by: nil) { result in
             switch result {
             case .success(let orders):
                 self.orders = orders

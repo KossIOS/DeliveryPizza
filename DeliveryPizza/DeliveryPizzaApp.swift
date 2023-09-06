@@ -14,6 +14,7 @@ let screen = UIScreen.main.bounds
 struct DeliveryPizzaApp: App {
     
     @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    
     var body: some Scene {
         WindowGroup {
             if let user = AuthServise.shared.currentUser {

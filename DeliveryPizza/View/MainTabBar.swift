@@ -43,3 +43,8 @@ struct MainTabBar: View {
     }
 }
 
+//struct MainTabBar_PreviewProvider {
+//    static var previews: some View {
+//        MainTabBar(viewModel: <#MainTabBarViewModel#>)
+//    }
+//}
