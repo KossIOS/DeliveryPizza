@@ -72,8 +72,7 @@ struct AuthView: View {
                             return
                         }
                         
-                        
-                        AuthServise.shared.singUp(email: email, password: password) { result in
+                        AuthServise.shared.singUp(email: self.email, password: self.password) { result in
                             
                             switch result {
                             case .success(let user):

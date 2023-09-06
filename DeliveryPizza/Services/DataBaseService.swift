@@ -21,7 +21,7 @@ class DataBaseService {
     
     func getPositions(by orderID: String, completion: @escaping(Result<[Position], Error>) -> ()) {
         
-        let positionRef = ordersRef.document(orderID).collection("positions")
+        let positionRef = ordersRef.document(orderID).collection("position")
         positionRef.getDocuments { qSnap, error in
             if let querySnapshot = qSnap {
                 var positions = [Position]()
@@ -38,7 +38,7 @@ class DataBaseService {
         }
     }
     
-    func getOrders(by userID: String?, completion: @escaping(Result<[Order], Error>) -> ()) {
+    func gerOrders(by userID: String?, completion: @escaping(Result<[Order], Error>) -> ()) {
         self.ordersRef.getDocuments { qSnap, error in
             if let qSnap = qSnap {
                 var orders = [Order]()
@@ -131,25 +131,24 @@ class DataBaseService {
         }
     }
     
-//    func getProducts(completion: @escaping (Result<[Product], Error>) -> ()) {
-//        self.productsRef.getDocuments { qSnap, error in
-//            guard let qSnap = qSnap else {
-//                if let error = error {
-//                    completion(.failure(error))
-//                }
-//                return
-//            }
-//            let docs = qSnap.documents {
-//                var products = [Product]()
-//                for doc in docs {
-//                    guard let product = Product(doc: doc) else { return }
-//                    product.append(product)
-//                }
-//                completion(.success(products))
-//            }
-//
-//
-//        }
-//    }
-}
+    func getProducts(completion: @escaping (Result<[Product], Error>) -> ()) {
+        self.productsRef.getDocuments { qSnap, error in
+            guard let qSnap = qSnap else {
+                if let error = error {
+                    completion(.failure(error))
+                }
+                return
+            }
+            let docs = qSnap.documents
+                var products = [Product]()
+                for doc in docs {
+                    guard let product = Product(doc: doc) else { return }
+                    products.append(product)
+                }
+                completion(.success(products))
+            }
+
+
+        }
+    }
 

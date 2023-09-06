@@ -17,7 +17,7 @@ class ProfileViewModel: ObservableObject {
     }
     
     func getOrders() {
-        DataBaseService.shared.getOrders(by: AuthServise.shared.currentUser!.accessibilityHint) { result in
+        DataBaseService.shared.gerOrders(by: AuthServise.shared.currentUser!.accessibilityHint) { result in
             switch result {
             case .success(let orders):
                 self.orders = orders

@@ -47,7 +47,7 @@ struct CatalogView: View {
             }
         }.navigationBarTitle(Text("Catalog"))
             .onAppear {
-//                self.viewModel.getProducts()
+                self.viewModel.getProducts()
             }
     }
 }

@@ -98,6 +98,8 @@ struct ProfileView: View {
         }
         
         .onAppear {
+          
+           
            
         }
     }
